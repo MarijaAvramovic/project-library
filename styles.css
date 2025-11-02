@@ -1,9 +1,17 @@
-p{
-    color: rgb(0, 0, 0);
-    font-size: 2rem;
-
+ 
+.container {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem;
 }
-div{
+.card{
     background-color: rgb(211, 194, 229);
-    height: 40%;
+    border: 1px solid rgb(45, 40, 33);
+    width: 40%;
+    text-align: center;
+}
+button{
+    background-color: rgb(72, 72, 206);
+    color: wheat;
+    font-size: 2rem;
 }

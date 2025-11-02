@@ -1,5 +1,6 @@
  
 let myLibrary = [];  
+const container = document.querySelector('.container');
 
 function Book(author, title, numberOfPages, isRead) {
      if (!new.target) {
@@ -26,6 +27,7 @@ console.log(myLibrary);
 myLibrary.forEach(booky => {
   console.log(booky);
       let newDiv = document.createElement('div');
+      newDiv.classList.add('card');
       let authorParagraph = document.createElement('p');
       authorParagraph.textContent =  `Author: ${booky.author}` ;
       let titleParagraph = document.createElement('p');
@@ -38,7 +40,7 @@ myLibrary.forEach(booky => {
       newDiv.appendChild(authorParagraph);
       newDiv.appendChild(pagesParagraph);
       newDiv.appendChild(isReadParagraph);
-      document.body.appendChild(newDiv); 
+      container.appendChild(newDiv); 
 
 });
 
