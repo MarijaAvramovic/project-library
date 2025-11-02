@@ -22,6 +22,8 @@ function addBookToLibrary(author, title, numberOfPages, isRead) {
  addBookToLibrary("didika", "didika", 54, true);
   addBookToLibrary("mimika", "didika", 54, true);
    addBookToLibrary("pipika", "didika", 483, false);
+    addBookToLibrary("mimika", "didika", 565, true);
+   addBookToLibrary("pipika", "didika", 43, false);
 console.log(myLibrary);
 
 myLibrary.forEach(booky => {

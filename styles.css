@@ -1,17 +1,22 @@
  
 .container {
     display: flex;
-    gap: 1rem;
-    margin: 2rem;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin: 10px;
 }
 .card{
     background-color: rgb(211, 194, 229);
     border: 1px solid rgb(45, 40, 33);
-    width: 40%;
     text-align: center;
+    flex-basis:  calc(100%/3 - 4px);
+    flex-grow: 0;
+    flex-shrink: 0;
+
 }
 button{
     background-color: rgb(72, 72, 206);
     color: wheat;
     font-size: 2rem;
+    
 }
