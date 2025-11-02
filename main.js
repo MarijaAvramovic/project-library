@@ -1,6 +1,8 @@
  
 let myLibrary = [];  
-const container = document.querySelector('.container');
+const container = document.querySelector('.container'); 
+const form = document.querySelector('#form');
+const btn = document.querySelector('.btn');
 
 function Book(author, title, numberOfPages, isRead) {
      if (!new.target) {
@@ -47,3 +49,18 @@ myLibrary.forEach(booky => {
 });
 
 console.log(myLibrary[1].id);
+
+
+btn.addEventListener('click', function() {
+  // Option 1: Add a class
+  // myElement.classList.add('new-class');
+
+  // Option 2: Remove a class
+  form.classList.remove('invisible');
+
+  // Option 3: Toggle a class (adds if not present, removes if present)
+  // myElement.classList.toggle('another-class');
+
+  // Option 4: Replace a class
+  // myElement.classList.replace('old-class', 'updated-class');
+});

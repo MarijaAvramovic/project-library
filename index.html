@@ -8,7 +8,22 @@
     <title>Library</title>
 </head>
 <body>
-  <button>Add New Book</button>
-  <div class="container"></div>
+   
+   
+
+  <div class="aside">
+    <button class="btn" >Add New Book</button>
+    <form id="form" class="invisible" action="/submit-form" method="post">
+  <!-- Input elements will go here -->
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" /><br /><br />
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" /><br /><br />
+
+  <input type="submit" value="Submit" />
+</form>
+</div>  
+  <div class="main"> <div class="container"></div></div>
 </body>
 </html>
