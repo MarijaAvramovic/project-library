@@ -1,3 +1,9 @@
 p{
-    color: red;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+
+}
+div{
+    background-color: rgb(211, 194, 229);
+    height: 40%;
 }

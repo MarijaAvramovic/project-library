@@ -25,6 +25,21 @@ console.log(myLibrary);
 
 myLibrary.forEach(booky => {
   console.log(booky);
+      let newDiv = document.createElement('div');
+      let authorParagraph = document.createElement('p');
+      authorParagraph.textContent =  `Author: ${booky.author}` ;
+      let titleParagraph = document.createElement('p');
+      titleParagraph.textContent =  `Title: ${booky.title}` ;
+      let pagesParagraph = document.createElement('p');
+      pagesParagraph.textContent =  `Number of pages: ${booky.numberOfPages}` ;
+      let isReadParagraph = document.createElement('p');
+      isReadParagraph.textContent =  `READ: ${booky.isRead}` ;
+      newDiv.appendChild(titleParagraph);
+      newDiv.appendChild(authorParagraph);
+      newDiv.appendChild(pagesParagraph);
+      newDiv.appendChild(isReadParagraph);
+      document.body.appendChild(newDiv); 
+
 });
 
-console.log(myLibrary[1]["title"]);
+console.log(myLibrary[1].id);
