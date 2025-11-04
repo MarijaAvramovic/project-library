@@ -5,6 +5,7 @@ const form = document.querySelector('#form');
 const btn = document.querySelector('.btn');
 const btnSaveBook = document.querySelector('#btnSaveBook');
 
+
 function Book(author, title, numberOfPages, isRead) {
      if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
@@ -30,7 +31,9 @@ function addBookToLibrary(author, title, numberOfPages, isRead) {
  
 
 
-function displayBook(author, title, numOfPages, isRead) {
+function displayBook(author, title, numOfPages, isRead, id) {
+
+       
   let newDiv = document.createElement('div');
       newDiv.classList.add('card');
       let authorParagraph = document.createElement('p');
@@ -45,15 +48,30 @@ function displayBook(author, title, numOfPages, isRead) {
       newDiv.appendChild(authorParagraph);
       newDiv.appendChild(pagesParagraph);
       newDiv.appendChild(isReadParagraph);
+
+     
+
+      let btnRemoveBook = document.createElement('button');
+      btnRemoveBook.textContent = "Remove book";  
+    btnRemoveBook.classList.add("btnRemoveBook"); 
+    btnRemoveBook.dataset.btnId = id;
+    newDiv.dataset.divId = id;
+      newDiv.appendChild(btnRemoveBook);
+
+     
+
       container.appendChild(newDiv); 
+       
 } 
+
+ 
  
     myLibrary.forEach(booky => {
-      displayBook(booky.author, booky.title, booky.numberOfPages, booky.isRead);
+      displayBook(booky.author, booky.title, booky.numberOfPages, booky.isRead, booky.id);
 
     });
 
-console.log(myLibrary[1].id);
+ 
 
 
 btn.addEventListener('click', function() {
@@ -75,4 +93,29 @@ form.addEventListener('submit', function(event) {
    displayBook(newAuthor, newTitle, newNumOfPages, newIsRead);
 
 
+});
+const buttonsRemoveBook = document.querySelectorAll('.btnRemoveBook');
+
+buttonsRemoveBook.forEach(button => {
+  button.addEventListener('click', (e) => {
+    // console.log("clickedBtnId");
+    const clickedBtn = e.currentTarget;
+
+    const dataset = clickedBtn.dataset; 
+    const clickedBtnId = dataset.btnId;
+
+
+    console.log(clickedBtnId);
+    console.log(typeof clickedBtnId);
+    console.log(e.currentTarget);
+
+    const cardRemoved = document.querySelector(`[data-div-id="${clickedBtnId}"]`);
+
+    console.log(cardRemoved);
+     container.removeChild(cardRemoved);
+     
+    myLibrary = myLibrary.filter(book => book.id !== clickedBtnId);
+
+     
+  });
 });
